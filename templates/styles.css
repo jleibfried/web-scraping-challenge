@@ -1,0 +1,117 @@
+/* 
+This is caustic on the eyes and that's the point
+
+Choosing bad colors and themes was meant 
+to highlight the vast array of tools CSS offers.
+I COULD have chosen something safer 
+and more corporate acceptable but that seemed boring
+*/
+body {
+  background: yellowgreen;
+}
+
+h1 {
+  font-size: 96px;
+  color: rgb(31, 223, 47);
+}
+
+h2{
+  font-size: 36pt
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4{
+  color: black;
+  font-size: smaller;
+  font-style:  oblique;
+  font-variant: small-caps;
+  font-stretch: extra-condensed; 	
+  font: Comic Sans;
+}
+
+h5{
+  color: red;
+  font-size: 12px;
+}
+
+
+.navbar-header {
+  padding: 10px;
+  background: pink;
+  cursor: crosshair;
+}
+
+.navbar-header li a{
+  color: red;
+  text-decoration: none;
+  font-size: x-large;
+  font-style:  "Calibri";
+  font-variant: small-caps;
+
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  cursor: help;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.show {display: block;}
+
+.header {
+  height: 200px;
+  padding-top: 20px;
+  background: yellowgreen;
+  color: pink;
+}
+
+.header h1 {
+  padding: 60px;
+  margin: 0;
+  color: purple;
+  text-align: center;
+  font-family: Impact, Charcoal, sans-serif;
+}
+
+
+.container{
+  background: cyan;
+}
+
+.rightAlign{
+  text-align: right;
+}
+
+.navbarNavAltMarkup{
+  padding: 60px;
+  margin: 0;
+  color: purple;
+  text-align: center;
+
+}
+
+
+
+
+/* Below is for the Pandas to_html code */
+

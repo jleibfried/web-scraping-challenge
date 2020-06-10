@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MARS BARS!</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css"> -->
+</head>
+
+<body>
+  <div class="container text-center">
+    <h1 class="jumbotron">MARS</h1>
+    <div>
+      <ul style="list-style: none;">
+        {% for marsObj in marsInfoDb %}
+          <h1>{{ marsObj.Title }}:</h1>
+          <br>
+          <h3>{{ marsObj.Paragraph }}</h3> 
+          <br>
+          <li><img src={{ marsObj.Image }}></li>
+          <br>
+          <br>
+          <div class="row">
+            <div class="col-md-4">
+              <table>{{ marsObj.Table }}</table>
+            </div>
+            <div class="col-md-4"><a href="viz2.html">
+                <!-- https://www.crn.com/slide-shows/cloud/240143033/the-10-biggest-cloud-stories-of-2012.htm -->
+                <img src="./Resources/assets/images/clouds.jpg">
+                <h3>Clouds</h3>
+              </a></div>
+            <div class="col-md-4"><a href="viz3.html">
+                <!-- https://www.mprnews.org/story/2018/03/05/wind-projects-bring-opportunity-opposition-to-minnesota -->
+                <img src="./Resources/assets/images/wind.jpg">
+                <h3>Wind</h3>
+              </a></div>
+          
+          </div>
+
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
