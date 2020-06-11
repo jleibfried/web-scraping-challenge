@@ -17,33 +17,57 @@
     <div>
       <ul style="list-style: none;">
         {% for marsObj in marsInfoDb %}
-          <h1>{{ marsObj.Title }}:</h1>
-          <br>
-          <h3>{{ marsObj.Paragraph }}</h3> 
-          <br>
-          <li><img src={{ marsObj.Image }}></li>
-          <br>
-          <br>
-          <div class="row">
-            <div class="col-md-4">
-              <table>{{ marsObj.Table }}</table>
-            </div>
-            <div class="col-md-4"><a href="viz2.html">
-                <!-- https://www.crn.com/slide-shows/cloud/240143033/the-10-biggest-cloud-stories-of-2012.htm -->
-                <img src="./Resources/assets/images/clouds.jpg">
-                <h3>Clouds</h3>
-              </a></div>
-            <div class="col-md-4"><a href="viz3.html">
-                <!-- https://www.mprnews.org/story/2018/03/05/wind-projects-bring-opportunity-opposition-to-minnesota -->
-                <img src="./Resources/assets/images/wind.jpg">
-                <h3>Wind</h3>
-              </a></div>
-          
+        <h1>{{ marsObj.Title }}:</h1>
+        <br>
+        <h3>{{ marsObj.Paragraph }}</h3>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+          <div class="col-md-4">
+            {{ marsObj.Table|safe  }}
           </div>
+          <div class="col-md-4">
+            <li><img src={{ marsObj.Image }}></li>
+          </div>
+        </div>
 
         {% endfor %}
-      </ul>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2>The Hemis of Earth</h2>
     </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <img src={{ hemisphere_image_urls[0].img_url}}>
+        <h3>{{hemisphere_image_urls[0].title}}</h3>
+      </div>
+      <div class="col-lg-6">
+        <img src={{ hemisphere_image_urls[1].img_url}}>
+        <h3>{{hemisphere_image_urls[1].title}}</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-6">
+        <img src={{ hemisphere_image_urls[2].img_url}}>
+        <h3>{{hemisphere_image_urls[2].title}}</h3>
+      </div>
+      <div class="col-lg-6">
+        <img src={{ hemisphere_image_urls[3].img_url}}>
+        <h3>{{hemisphere_image_urls[3].title}}</h3>
+      </div>
+    </div>
+
+    </ul>
+  </div>
   </div>
 </body>
 

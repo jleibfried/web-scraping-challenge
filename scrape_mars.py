@@ -62,7 +62,7 @@ def scrape():
     featured_image_url = 'https://www.jpl.nasa.gov' + extractImageSrc
 
 
-
+    # Tweet place holder while I figure out the twitter scrape
     mars_weather = 'Sol 1801 (Aug 30, 2017), Sunny, high -21C/-5F, low -80C/-112F, pressure at 8.82 hPa, daylight 06:09-17:55'
 
 
@@ -86,6 +86,8 @@ def scrape():
         row = [tr.text for tr in td]
         l.append(row)
     factsDf = pd.DataFrame(l)
+    factsDf.columns = (['Mars Metrics','Measurements'])
+    factsDf.set_index('Mars Metrics')
 
     htmlOutput = factsDf.to_html()
 
@@ -97,6 +99,40 @@ def scrape():
 #         {"title": "Schiaparelli Hemisphere", "img_url": "..."},
 #         {"title": "Syrtis Major Hemisphere", "img_url": "..."},
 #     ]
+
+    # Scraping Wikipedia
+    url_jpl = 'https://en.wikipedia.org/wiki/Chrysler_Hemi_engine'
+    browser.visit(url_jpl)
+    newHtml = browser.html
+    soup = BeautifulSoup(newHtml, 'html.parser')
+    images = soup.findAll('img')
+
+    # creating a list of images
+    extImgList = []
+    count =0
+    for image in images:
+      extractImage = images[count]
+      extractImageSrc = extractImage['src']
+      extImgList.append(extractImageSrc)
+      count = count +1
+
+    # selecting the ones I like
+    extractImageSrc0 = extImgList[15]
+    extractImageSrc1 = extImgList[3]
+    extractImageSrc2 = extImgList[16]
+    extractImageSrc3 = extImgList[6]
+ 
+    link0 = "https:" + extractImageSrc0
+    link1 = "https:" + extractImageSrc1
+    link2 = "https:" + extractImageSrc2
+    link3 = "https:" + extractImageSrc3
+
+    hemisphere_image_urls = [
+        {"title": "5 7 Hemi", "img_url": link0},
+        {"title": "Hemi in 300C", "img_url": link1},
+        {"title": "6 1 Hemi", "img_url": link2},
+        {"title": "FiredomeV8", "img_url": link3},
+    ]
 
 
 
@@ -125,7 +161,7 @@ def scrape():
     # sending info to index.html
     marsInfoDb = list(db.marsdb.find())
     print (marsInfoDb)
-    return render_template('index.html', marsInfoDb=marsInfoDb, firstTitle=firstTitle)
+    return render_template('index.html', marsInfoDb=marsInfoDb, hemisphere_image_urls=hemisphere_image_urls)
 
 
 
