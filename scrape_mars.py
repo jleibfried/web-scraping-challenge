@@ -62,7 +62,7 @@ def scrape():
     featured_image_url = 'https://www.jpl.nasa.gov' + extractImageSrc
 
 
-    # Tweet place holder while I figure out the twitter scrape
+    # Tweet place holder while I figure out the twitter scrape here ./testPython/twitter Test.ipynb
     mars_weather = 'Sol 1801 (Aug 30, 2017), Sunny, high -21C/-5F, low -80C/-112F, pressure at 8.82 hPa, daylight 06:09-17:55'
 
 
